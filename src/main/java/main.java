@@ -20,8 +20,8 @@ public class main {
 		HomeLogic homeLogic = new HomeLogic();
 		Thread.sleep(3000);		
 		indexLogic.clickBtnLogin();
-		loginLogic.writeEmail("rsb.amanda@gmail.com");
-		loginLogic.writePassword("feliznatal");
+		loginLogic.writeEmail("");
+		loginLogic.writePassword("");
 		loginLogic.clickBtnSubmit();
 		homeLogic.clickDropdownName("Amanda");
 		homeLogic.clickMyAccount();
