@@ -8,6 +8,7 @@ import configuracao.DriverFactory;
 
 public class HomePage {
 	private WebDriver driver;
+	private By myAccount = By.xpath("//ul[@class='dropdown-menu']/li/a[@href='#/account']");
 	
 	public HomePage() {
 		driver = DriverFactory.getDriver();
@@ -18,7 +19,7 @@ public class HomePage {
 	}
 	
 	public WebElement getMyAccount() {
-		return driver.findElement(By.xpath("//ul[@class='dropdown-menu']/li/a[@href='#/account']"));
+		return driver.findElement(myAccount);
 	}
 	
 }
