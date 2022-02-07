@@ -11,11 +11,11 @@ public class LoginLogic {
 		loginPage = new LoginPage();
 	}
 	
-	public void writeEmail(String email) {
+	public void setEmail(String email) {
 		loginPage.getInputLogin().sendKeys(email);
 	}
 	
-	public void writePassword(String password) {
+	public void setPassword(String password) {
 		loginPage.getInputPassword().sendKeys(password);
 	}
 	public void clickBtnSubmit() {

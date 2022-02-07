@@ -27,7 +27,6 @@ public class HomeLogic {
 		homePage.getDropdownName(name).click();
 	}
 	public void clickMyAccount() {
-	//*	waitClick(homePage.getMyAccount());
 		homePage.getMyAccount().click();
 			
 	}
