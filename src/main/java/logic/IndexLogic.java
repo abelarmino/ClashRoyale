@@ -18,8 +18,8 @@ public class IndexLogic {
 		wait = new WebDriverWait(DriverFactory.getDriver(), Duration.ofSeconds(15));
 	}
 	
-	public void clickBtnLogin() {
-		//wait.until(ExpectedConditions.elementToBeClickable(indexPage.getBtnLogin()));
+	public void clickBtnLogin() throws InterruptedException {
+		Thread.sleep(3000);
 		indexPage.getBtnLogin().click();
 	}
 }

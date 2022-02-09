@@ -18,12 +18,11 @@ public class HomeLogic {
 	WebDriverWait wait;
 	public HomeLogic() {
 		homePage = new HomePage();
-		wait = new WebDriverWait(DriverFactory.getDriver(), Duration.ofSeconds(15));
+		
 	}
 	
-
-	public void clickDropdownName(String name) {
-		wait.until(ExpectedConditions.elementToBeClickable(DriverFactory.getDriver().findElement(By.className("dropdown-toggle__text"))));
+	public void clickDropdownName(String name) throws InterruptedException {
+		Thread.sleep(3000);
 		homePage.getDropdownName(name).click();
 	}
 	public void clickMyAccount() {
