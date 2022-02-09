@@ -12,7 +12,8 @@ public class NewKeyLogic {
 		newKeyPage = new NewKeyPage();
 	}
 	
-	public void setName(String name) {
+	public void setName(String name) throws InterruptedException {
+		Thread.sleep(3000);
 		newKeyPage.getName().sendKeys(name);
 	}
 	
