@@ -14,8 +14,13 @@ public class main {
 		GenerateKey generateKey = new GenerateKey();
 		generateKey.login();
 		generateKey.generateKey();
-		Clans clans = new Clans(generateKey.getToken(),"the%20resistance","57000038","#9V2Y");
-		clans.getClan();
+		Clans clans = new Clans(generateKey.getToken());
+		String clanTag = clans.getClan("The resistance","57000038","#9V2Y");
+		if (clanTag ==   null) {
+			System.out.println("Não há nenhum clã com esse nome");
+		} else {
+			clans.getMembers(clanTag);
+		}
 		
 		
 	}
