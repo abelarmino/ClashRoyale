@@ -1,3 +1,5 @@
+import java.io.IOException;
+
 import actions.Clans;
 import actions.GenerateKey;
 import actions.Locations;
@@ -6,7 +8,7 @@ import configuracao.DriverFactory;
 
 public class main {
 
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) throws InterruptedException, IOException {
 
 		DriverFactory driver = new DriverFactory();
 		driver.setDriver("https://developer.clashroyale.com/#/");
@@ -17,18 +19,13 @@ public class main {
 		String TOKEN = generateKey.getToken();
 		Clans clans = new Clans(TOKEN);
 		Members members = new Members(TOKEN);
-		Locations locations = new Locations(TOKEN);
-		String countryId = locations.getLocationId("Brazil");
-		if (countryId == null) {
-			System.out.println("Não há nenhum país com esse nome");
-		} else {
-			String clanTag = clans.getClan("The resistance", countryId, "#9V2Y");
+		
+			String clanTag = clans.getClan();
 			if (clanTag == null) {
 				System.out.println("Não há nenhum clã com esse nome");
 			} else {
 				members.getMembers(clanTag);
 			}
-		}
 
 	}
 }
