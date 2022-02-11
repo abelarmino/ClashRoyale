@@ -24,8 +24,7 @@ public class Clans {
 	private String locationId;
 	private String tag;
 	private String name = "The resistance";
-	private static final String fileName = "C:/Projects/ClashRoyale/src/resources/members.xls";
-
+	
 	public Clans(String TOKEN) {
 		this.TOKEN = TOKEN;
 
@@ -54,50 +53,6 @@ public class Clans {
 		}
 
 		return null;
-	}
-
-	public void getMembers(String tag) {
-		tag = tag.replaceAll("[#]", "%23");
-		HSSFWorkbook workbook = new HSSFWorkbook();
-		HSSFSheet sheetMembers = workbook.createSheet("Members");
-		
-		String URL="https://api.clashroyale.com/v1/clans/"+tag+"/members"; 
-		String membersInformation = Unirest.get(URL)
-				.header("Accept", "application/json")
-				.header("authorization", "Bearer "+TOKEN)
-				.asString()
-				.getBody();
-		JSONObject allMembers = new JSONObject(membersInformation);
-		JSONArray arrAllMembers = allMembers.getJSONArray("items");
-		int rowNum = 0;
-		for(Object members:arrAllMembers) {
-			JSONObject member = (JSONObject) members;
-			Row row = sheetMembers.createRow(rowNum++);
-			int cellNum = 0;
-			Cell cellName = row.createCell(cellNum++);
-			cellName.setCellValue(member.get("name").toString());
-			Cell cellExpLvl = row.createCell(cellNum++);
-			cellExpLvl.setCellValue(member.get("expLevel").toString());
-			Cell cellTrophies = row.createCell(cellNum++);
-			cellTrophies.setCellValue(member.get("trophies").toString());
-			Cell cellRole = row.createCell(cellNum++);
-			cellRole.setCellValue(member.get("role").toString());
-			System.out.println(member.get("name"));
-		}
-		try {
-			FileOutputStream out = 
-					new FileOutputStream(new File (fileName));
-			workbook.write(out);
-			out.close();
-			System.out.println("Arquivo criado com sucesso!");
-		} catch(FileNotFoundException e) {
-			e.printStackTrace();
-			System.out.println("Arquivo não encontrado");
-		} catch(IOException e) {
-			e.printStackTrace();
-			System.out.println("Erro na edição do arquivo");
-
-		}
 	}
 
 }

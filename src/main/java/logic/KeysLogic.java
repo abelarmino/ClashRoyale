@@ -11,8 +11,8 @@ public class KeysLogic {
 		keysPage = new KeysPage();
 	}
 	
-	public String getTokenText() {
-		Utils.waitVisibility(3, keysPage.getToken());
+	public String getTokenText() throws InterruptedException {
+		Thread.sleep(3000);
 		return keysPage.getToken().getText();
 	}
 }

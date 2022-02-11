@@ -14,7 +14,7 @@ public class NewKeyLogic {
 	}
 	
 	public void setName(String name) throws InterruptedException {
-		Utils.waitVisibility(3, newKeyPage.getName());
+		Thread.sleep(3000);		
 		newKeyPage.getName().sendKeys(name);
 	}
 	

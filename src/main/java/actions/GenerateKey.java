@@ -8,8 +8,8 @@ import logic.MyAccountLogic;
 import logic.NewKeyLogic;
 
 public class GenerateKey {
-	private String email = "";
-	private String password = "";
+	private String email = "rsb.amanda@gmail.com";
+	private String password = "feliznatal";
 	private String name = "Amanda";
 	private String keyName = "Key 2";
 	private String description = "Descrição";

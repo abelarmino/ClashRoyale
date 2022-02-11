@@ -16,12 +16,10 @@ public class IndexLogic {
 	
 	public IndexLogic() {
 		indexPage = new IndexPage();
-		wait = new WebDriverWait(DriverFactory.getDriver(), Duration.ofSeconds(15));
 	}
 	
-	public void clickBtnLogin() {
-		
-		Utils.waitVisibility(3,indexPage.getBtnLogin());
+	public void clickBtnLogin() throws InterruptedException {
+		Thread.sleep(3000);		
 		indexPage.getBtnLogin().click();
 	}
 }
