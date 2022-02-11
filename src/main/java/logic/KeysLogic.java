@@ -1,5 +1,6 @@
 package logic;
 
+import actions.Utils;
 import pages.KeysPage;
 
 public class KeysLogic {
@@ -11,7 +12,7 @@ public class KeysLogic {
 	}
 	
 	public String getTokenText() throws InterruptedException {
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		return keysPage.getToken().getText();
 	}
 }

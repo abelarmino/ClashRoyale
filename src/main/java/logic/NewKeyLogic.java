@@ -3,6 +3,7 @@ package logic;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
+import actions.Utils;
 import pages.NewKeyPage;
 
 public class NewKeyLogic {
@@ -13,7 +14,7 @@ public class NewKeyLogic {
 	}
 	
 	public void setName(String name) throws InterruptedException {
-		Thread.sleep(3000);
+		Thread.sleep(3000);		
 		newKeyPage.getName().sendKeys(name);
 	}
 	
@@ -21,7 +22,6 @@ public class NewKeyLogic {
 		newKeyPage.getDescription().sendKeys(description);
 	}
 	public void setIp(String ip) {
-		//colocar try catch depois
 		newKeyPage.getIp().sendKeys(ip);
 	}
 	public void clickBtnSubmit() {
