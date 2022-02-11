@@ -10,6 +10,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import actions.Utils;
 import configuracao.DriverFactory;
 import pages.HomePage;
 
@@ -21,8 +22,8 @@ public class HomeLogic {
 		
 	}
 	
-	public void clickDropdownName(String name) throws InterruptedException {
-		Thread.sleep(3000);
+	public void clickDropdownName(String name)  {
+		Utils.waitVisibility(3, homePage.getDropdownName(name));
 		homePage.getDropdownName(name).click();
 	}
 	public void clickMyAccount() {
