@@ -30,8 +30,8 @@ public class Clans {
 		location = new Locations(TOKEN);
 		FileInputStream file = new FileInputStream(new File(fileName));
 		HSSFWorkbook workbook = new HSSFWorkbook(file);
-		HSSFSheet sheetUsers = workbook.getSheetAt(2);
-		Iterator<Row> rowIterator = sheetUsers.iterator();
+		HSSFSheet sheetClans = workbook.getSheetAt(2);
+		Iterator<Row> rowIterator = sheetClans.iterator();
 		
 		while(rowIterator.hasNext()) {
 			Row row = rowIterator.next();
