@@ -13,8 +13,7 @@ public class NewKeyLogic {
 		newKeyPage = new NewKeyPage();
 	}
 	
-	public void setName(String name) throws InterruptedException {
-		Thread.sleep(3000);		
+	public void setName(String name) {		
 		newKeyPage.getName().sendKeys(name);
 	}
 	
@@ -25,7 +24,8 @@ public class NewKeyLogic {
 		newKeyPage.getIp().sendKeys(ip);
 	}
 	public void clickBtnSubmit() {
+		Utils.captureScreen("newKey");
 		newKeyPage.getBtnSubmit().click();
 	}
-
+	
 }

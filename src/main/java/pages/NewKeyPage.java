@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import actions.Utils;
 import configuracao.DriverFactory;
 
 public class NewKeyPage {
@@ -18,7 +19,7 @@ public class NewKeyPage {
 	}
 	
 	public WebElement getName() {
-		return driver.findElement(name);
+		return Utils.waitToBeClickable(name);
 	}
 	public WebElement getDescription() {
 		return driver.findElement(description);

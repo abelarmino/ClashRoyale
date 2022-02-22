@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import actions.Utils;
 import configuracao.DriverFactory;
 
 public class LoginPage {
@@ -24,6 +25,6 @@ public class LoginPage {
 	}
 	
 	public WebElement getBtnSubmit() {
-		return driver.findElement(btnSubmit);
+		return Utils.waitToBeClickable(btnSubmit);
 	}
 }

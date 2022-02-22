@@ -1,5 +1,6 @@
 package logic;
 
+import actions.Utils;
 import pages.MyAccountPage;
 
 public class MyAccountLogic {
@@ -9,13 +10,13 @@ public class MyAccountLogic {
 		myAccountPage = new MyAccountPage();
 	}
 
-	public void clickNewKey() throws InterruptedException {
-		Thread.sleep(3000);
+	public void clickNewKey() {
+		Utils.captureScreen("myAccount");
 		myAccountPage.getNewKey().click();
 	}
 
-	public void clickExistingKey(String keyName) throws InterruptedException {
-		Thread.sleep(3000);
+	public void clickExistingKey(String keyName) {
 		myAccountPage.getExistingKeyName(keyName).click();
 	}
+	
 }

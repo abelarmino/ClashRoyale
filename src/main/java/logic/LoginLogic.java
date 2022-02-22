@@ -2,6 +2,7 @@ package logic;
 
 import org.openqa.selenium.WebDriver;
 
+import actions.Utils;
 import pages.LoginPage;
 
 public class LoginLogic {
@@ -19,6 +20,7 @@ public class LoginLogic {
 		loginPage.getInputPassword().sendKeys(password);
 	}
 	public void clickBtnSubmit() {
+		Utils.captureScreen("login");
 		loginPage.getBtnSubmit().click();
 	}
 

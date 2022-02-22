@@ -40,8 +40,6 @@ public class GenerateKey {
 		newKeyLogic = new NewKeyLogic();
 		keysLogic = new KeysLogic();
 		
-		
-		
 	}
 
 	public void login() throws InterruptedException, IOException {
@@ -51,6 +49,7 @@ public class GenerateKey {
 		loginLogic.setPassword(password);
 		loginLogic.clickBtnSubmit();	
 	}
+	
 	public void generateKey() throws InterruptedException, IOException {
 		homeLogic.clickDropdownName(name);
 		homeLogic.clickMyAccount();
@@ -64,6 +63,11 @@ public class GenerateKey {
 	public String getToken() throws InterruptedException {
 		myAccountLogic.clickExistingKey(keyName);
 		return keysLogic.getTokenText();
+	}
+	
+	public void deleteKey() throws InterruptedException {
+		keysLogic.clickBtnGotIt();
+		keysLogic.clickBtnDelete();	
 	}
 	public void getUsersInfo() throws IOException {
 		FileInputStream file = new FileInputStream(new File (fileName));
