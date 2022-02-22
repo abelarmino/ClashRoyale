@@ -18,8 +18,7 @@ public class IndexLogic {
 		indexPage = new IndexPage();
 	}
 	
-	public void clickBtnLogin() throws InterruptedException {
-		Thread.sleep(3000);		
+	public void clickBtnLogin() {	
 		indexPage.getBtnLogin().click();
 	}
 }

@@ -1,9 +1,14 @@
 package pages;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import actions.Utils;
 import configuracao.DriverFactory;
 
 public class HomePage {
@@ -13,13 +18,13 @@ public class HomePage {
 	public HomePage() {
 		driver = DriverFactory.getDriver();
 	}
-	public WebElement getDropdownName(String name) {
-		return driver.findElement(By.xpath("//span[text()='"+name+"']"));
-		
-	}
+	
+	public  WebElement getDropdownName(String name) {
+		return Utils.waitToBeClickable(By.xpath("//span[text()='"+name+"']"));
+		}
 	
 	public WebElement getMyAccount() {
-		return driver.findElement(myAccount);
+		return Utils.waitToBeClickable(myAccount);
 	}
 	
 }

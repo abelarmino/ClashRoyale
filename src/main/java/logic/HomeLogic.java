@@ -2,6 +2,7 @@ package logic;
 
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import actions.Utils;
 import pages.HomePage;
 
 public class HomeLogic {
@@ -14,9 +15,8 @@ public class HomeLogic {
 	}
 
 	public void clickDropdownName(String name) throws InterruptedException {
-		Thread.sleep(3000);
 		homePage.getDropdownName(name).click();
-
+		Utils.captureScreen("homePage");
 	}
 
 	public void clickMyAccount() {

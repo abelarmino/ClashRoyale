@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import actions.Utils;
 import configuracao.DriverFactory;
 
 public class IndexPage {
@@ -14,6 +15,6 @@ public class IndexPage {
 		driver = DriverFactory.getDriver();
 	}
 	public WebElement getBtnLogin() {
-		return driver.findElement(btnLogin);
+		return Utils.waitToBeClickable(btnLogin);
 	}
 }
